@@ -1,0 +1,51 @@
+{
+  "name": "watosan",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "dev": "nodemon ./backend/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc1",
+    "@nuxtjs/component-cache": "^1.1.2",
+    "@nuxtjs/markdownit": "^1.2.1",
+    "@nuxtjs/pwa": "^2.5.0",
+    "apollo-server-express": "^2.0.6",
+    "apollo-upload-server": "^7.1.0",
+    "biguint-format": "^1.0.0",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "flake-idgen": "^1.1.0",
+    "graphql": "^14.0.0",
+    "graphql-tag": "^2.9.2",
+    "highlight.js": "^9.12.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-highlightjs": "^3.0.0",
+    "mongoose": "^5.2.13",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "nuxt": "^1.4.2",
+    "pm2": "^3.0.4",
+    "sass-loader": "^7.1.0",
+    "sharp": "^0.20.8",
+    "speakingurl": "^14.0.1",
+    "vue-apollo": "^3.0.0-beta.19",
+    "vue-multiselect": "^2.1.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-upload-component": "^2.8.11"
+  },
+  "resolutions": {
+    "vue-apollo": "3.0.0-beta.16"
+  }
+}

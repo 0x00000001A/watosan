@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dd954300-34c7-465a-9f99-4c4371afdbd6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watosan.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/mutation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/mutations/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/mutations/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/mutations/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/queries/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/queries/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/queries/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/query.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/schema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/types/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/graphql/types/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/apollo-module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/no-ssr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/nuxt-child.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/nuxt-error.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/nuxt-link.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/nuxt-loading.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/components/nuxt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/empty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/loading.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/markdown-it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/views/app.template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/frontend/views/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/scss/mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/scss/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/BlogCommentForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/BlogLoading.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/BlogPost.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/graphql/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/graphql/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/graphql/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/middleware/https.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/manage/signin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/posts/_slug.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/posts/edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/posts/new.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/posts/scratchs.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/posts/tag/_tag.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-2028408351">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="editorconfig" value="1" />
+          <entry key="env" value="7" />
+          <entry key="eslintignore" value="1" />
+          <entry key="gitignore" value="2" />
+          <entry key="js" value="36" />
+          <entry key="json" value="15" />
+          <entry key="md" value="1" />
+          <entry key="prettierrc" value="1" />
+          <entry key="scss" value="2" />
+          <entry key="service" value="2" />
+          <entry key="ts" value="1" />
+          <entry key="vue" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key=".env file" value="7" />
+          <entry key="JSON" value="15" />
+          <entry key="JavaScript" value="36" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="SCSS" value="2" />
+          <entry key="TypeScript" value="1" />
+          <entry key="Vue.js" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="ESLintLanguageService" value="3" />
+          <entry key="TypeScriptServerServiceImpl" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="env" value="297" />
+          <entry key="gitignore" value="56" />
+          <entry key="js" value="1903" />
+          <entry key="json" value="111" />
+          <entry key="vue" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key=".env file" value="297" />
+          <entry key="JSON" value="111" />
+          <entry key="JavaScript" value="1903" />
+          <entry key="PLAIN_TEXT" value="56" />
+          <entry key="Vue.js" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sc</find>
+      <find>graphql</find>
+      <find>body-pa</find>
+      <find>pm2</find>
+      <find>shar</find>
+      <find>{{</find>
+      <find>s</find>
+      <find>ses</find>
+      <find>lang=&quot;scss&quot;</find>
+      <find>scss</find>
+      <find>&quot;</find>
+      <find>.idea</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>'</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\projects\watosan\src\backend</dir>
+      <dir>C:\projects\watosan\frontend</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/frontend/TODO" />
+        <option value="$PROJECT_DIR$/frontend/package.json" />
+        <option value="$PROJECT_DIR$/src/frontend/middleware/https.js" />
+        <option value="$PROJECT_DIR$/backend/server.js" />
+        <option value="$PROJECT_DIR$/src/backend/server.js" />
+        <option value="$PROJECT_DIR$/backend/graphql/mutations/post.js" />
+        <option value="$PROJECT_DIR$/backend/graphql/mutations/file.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/frontend/layouts/default.vue" />
+        <option value="$PROJECT_DIR$/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/.eslintignore" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/backend/main.js" />
+        <option value="$PROJECT_DIR$/backend/graphql/types/post.js" />
+        <option value="$PROJECT_DIR$/backend/models/post.js" />
+        <option value="$PROJECT_DIR$/nuxt.config.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="109" />
+    <option name="y" value="-21" />
+    <option name="width" value="1400" />
+    <option name="height" value="820" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Data flowJavaScript</id>
+          </State>
+          <State>
+            <id>ECMAScript 6 migration aidsJavaScript</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Flow type checkerJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Node.jsJavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="watosan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="watosan" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="javascript.nodejs.core.library.configured.version" value="8.11.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\projects\watosan\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="C:\projects\watosan\node_modules\eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2018.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\watosan" />
+      <recent name="C:\projects\watosan\src\backend" />
+      <recent name="C:\projects\watosan\src" />
+      <recent name="C:\projects\watosan\src\frontend" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642672" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32987013" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32987013" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2935065" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.vscode/settings.json" />
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/TODO" />
+    <entry file="file://$PROJECT_DIR$/backend/.prettierrc" />
+    <entry file="file://$PROJECT_DIR$/backend.service" />
+    <entry file="file://$PROJECT_DIR$/backend/NOTES.md" />
+    <entry file="file://$PROJECT_DIR$/backend/graphql/types/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/middleware/https.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/assets/scss/mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/assets/scss/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/BlogCommentForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/package.json" />
+    <entry file="file://$PROJECT_DIR$/backend/config/apollo.js" />
+    <entry file="file://$PROJECT_DIR$/backend/config/database.js" />
+    <entry file="file://$PROJECT_DIR$/backend/config/index.js" />
+    <entry file="file://$PROJECT_DIR$/backend/config/server.js" />
+    <entry file="file://$PROJECT_DIR$/backend/graphql/mutations/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/mutations/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/mutations/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/apollo-server-express/dist/ApolloServer.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/nuxt/lib/builder/builder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="470" column="16" selection-start-line="470" selection-start-column="16" selection-end-line="470" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/pages/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/layouts/default.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/package.json" />
+    <entry file="file://$PROJECT_DIR$/../estore/backoffice/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuxt.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/graphql/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/types/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/queries/file.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/queries/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/graphql/queries/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
