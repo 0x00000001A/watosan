@@ -19,24 +19,24 @@ module.exports = {
     title: 'Watosan',
     titleTemplate: '%s - Watosan',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'og:type', property: 'og:type', content: 'article'},
-      {hid: 'og:title', property: 'og:title', content: ''},
-      {hid: 'og:site_name', property: 'og:site_name', content: 'Watosan'},
-      {hid: 'og:url', property: 'og:url', content: 'http://watosan.org'},
-      {hid: 'twitter:card', property: 'twitter:card', content: 'article'},
-      {hid: 'twitter:site', property: 'twitter:site', content: '@watosanorg'},
-      {hid: 'twitter:title', property: 'twitter:title', content: 'Watosan'},
-      {hid: 'twitter:description', property: 'twitter:description', content: 'Another one developer\s blog'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'og:type', property: 'og:type', content: 'article' },
+      { hid: 'og:title', property: 'og:title', content: '' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Watosan' },
+      { hid: 'og:url', property: 'og:url', content: 'http://watosan.org' },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'article' },
+      { hid: 'twitter:site', property: 'twitter:site', content: '@watosanorg' },
+      { hid: 'twitter:title', property: 'twitter:title', content: 'Watosan' },
+      { hid: 'twitter:description', property: 'twitter:description', content: 'Another one developer\'s blog' }
     ],
     link: [
-      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inconsolata|Merriweather'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inconsolata|Merriweather' }
     ]
   },
 
   css: [
-    {src: 'highlight.js/styles/docco.css', lang: 'css'}
+    { src: 'highlight.js/styles/docco.css', lang: 'css' }
   ],
 
   loading: {
@@ -50,28 +50,28 @@ module.exports = {
   },
 
   modules: [
-    // '@nuxtjs/pwa',
+    '@nuxtjs/pwa',
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
-    // '@nuxtjs/component-cache'
+    '@nuxtjs/component-cache'
   ],
 
-  // render: {
-  //   static: {
-  //     maxAge: '1y',
-  //     setHeaders(response, path) {
-  //       if (path.includes('sw.js')) {
-  //         response.setHeader('Cache-Control', 'public, max-age=0')
-  //       }
-  //     }
-  //   }
-  // },
+  render: {
+    static: {
+      maxAge: '1y',
+      setHeaders (response, path) {
+        if (path.includes('sw.js')) {
+          response.setHeader('Cache-Control', 'public, max-age=0')
+        }
+      }
+    }
+  },
 
-  // router: {
-  //   middleware: [
-  //     'https'
-  //   ]
-  // },
+  router: {
+    middleware: [
+      'https'
+    ]
+  },
 
   apollo: {
     includeNodeModules: true,
@@ -96,7 +96,7 @@ module.exports = {
   build: {
     extractCSS: true,
     vendor: [],
-    extend(config, {isDev, isClient}) {
+    extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -106,5 +106,5 @@ module.exports = {
         })
       }
     }
-  },
+  }
 }

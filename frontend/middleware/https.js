@@ -5,7 +5,7 @@
  * @param redirect
  * @returns {*}
  */
-export default ({isDev, req, redirect}) => {
+export default ({ isDev, req, redirect }) => {
   if (!isDev && req) {
     const encrypted = req.headers['x-forwarded-proto'] === 'https' || req.connection.encrypted
 

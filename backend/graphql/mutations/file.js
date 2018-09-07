@@ -1,16 +1,16 @@
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
-const flakeId = require('flake-idgen');
-const intformat = require('biguint-format');
+const fs = require('fs')
+const path = require('path')
+const sharp = require('sharp')
+const FlakeId = require('flake-idgen')
+const intformat = require('biguint-format')
 
-const { GraphQLString } = require('graphql');
-const { GraphQLUpload } = require('apollo-upload-server');
+const { GraphQLString } = require('graphql')
+const { GraphQLUpload } = require('apollo-upload-server')
 
-const File = require('../../models/file');
-const FileType = require('../types/file');
+const File = require('../../models/file')
+const FileType = require('../types/file')
 
-const flakeIdGen = new flakeId({ epoch: 1300000000000 });
+const flakeIdGen = new FlakeId({ epoch: 1300000000000 })
 
 module.exports = {
   fileCreate: {
@@ -21,20 +21,20 @@ module.exports = {
         type: GraphQLUpload
       }
     },
-    async resolve(root, data) {
-      const { stream, mimetype, encoding } = await data.file;
+    async resolve (root, data) {
+      const { stream, mimetype, encoding } = await data.file
 
-      const uploadsDir = path.join(__dirname, '../..', 'uploads');
-      let filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id;
-      let fullpath = path.join(uploadsDir, filename);
+      const uploadsDir = path.join(__dirname, '../..', 'uploads')
+      let filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id
+      let fullpath = path.join(uploadsDir, filename)
 
-      if (!fs.existsSync(uploadsDir)) fs.mkdir(uploadsDir);
+      if (!fs.existsSync(uploadsDir)) fs.mkdir(uploadsDir)
       if (fs.existsSync(fullpath)) {
-        filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id;
-        fullpath = path.join(uploadsDir, filename);
+        filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id
+        fullpath = path.join(uploadsDir, filename)
       }
 
-      const writeStream = fs.createWriteStream(fullpath);
+      const writeStream = fs.createWriteStream(fullpath)
 
       const pipeline = sharp()
         .toFormat(sharp.format.jpeg, {
@@ -44,11 +44,11 @@ module.exports = {
         .clone()
         .resize(1024, 1024)
         .max()
-        .pipe(writeStream);
+        .pipe(writeStream)
 
-      stream.pipe(pipeline);
+      stream.pipe(pipeline)
 
-      return await new File({
+      return new File({
         filename,
         mimetype,
         encoding
@@ -62,13 +62,13 @@ module.exports = {
     args: {
       id: { type: GraphQLString }
     },
-    async resolve(root, { id }) {
-      const item = await File.findById(id).exec();
-      const filepath = path.join(__dirname, '../..', 'uploads', item.filename);
+    async resolve (root, { id }) {
+      const item = await File.findById(id).exec()
+      const filepath = path.join(__dirname, '../..', 'uploads', item.filename)
 
-      fs.unlinkSync(filepath);
+      fs.unlinkSync(filepath)
 
-      return await File.deleteOne({ _id: id }).exec();
+      return File.deleteOne({ _id: id }).exec()
     }
   }
-};
+}

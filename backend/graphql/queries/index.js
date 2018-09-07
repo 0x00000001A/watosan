@@ -1,9 +1,11 @@
-const post = require('./post');
-const file = require('./file');
+const post = require('./post')
+const file = require('./file')
+const auth = require('./auth')
 
 const queries = {
   ...post,
-  ...file
-};
+  ...file,
+  ...auth
+}
 
-module.exports = queries;
+module.exports = queries

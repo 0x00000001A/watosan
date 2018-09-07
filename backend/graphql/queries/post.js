@@ -1,7 +1,7 @@
-const { GraphQLString, GraphQLList } = require('graphql');
+const { GraphQLString, GraphQLList } = require('graphql')
 
-const Post = require('../../models/post');
-const PostType = require('../types/post');
+const Post = require('../../models/post')
+const PostType = require('../types/post')
 
 const queries = {
   post: {
@@ -10,16 +10,16 @@ const queries = {
     args: {
       slug: { type: GraphQLString }
     },
-    async resolve(parent, { slug }) {
-      return await Post.findOne({ slug }).exec();
+    resolve (parent, { slug }) {
+      return Post.findOne({ slug }).exec()
     }
   },
 
   posts: {
     type: GraphQLList(PostType),
     description: 'Get all posts',
-    async resolve() {
-      return await Post.find({ scratch: false }).sort({ _id: -1 }).exec()
+    resolve () {
+      return Post.find({ scratch: false }).sort({ _id: -1 }).exec()
     }
   },
 
@@ -29,10 +29,10 @@ const queries = {
     args: {
       tag: { type: GraphQLString }
     },
-    async resolve(parent, { tag }) {
-      return await Post.find({ tags: { $in : [tag] } }).sort({ _id: -1 }).exec()
+    resolve (parent, { tag }) {
+      return Post.find({ tags: { $in: [tag] } }).sort({ _id: -1 }).exec()
     }
   }
-};
+}
 
-module.exports = queries;
+module.exports = queries

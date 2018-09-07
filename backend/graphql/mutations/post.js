@@ -1,8 +1,8 @@
-const getSlug = require('speakingurl');
-const { GraphQLNonNull, GraphQLString, GraphQLList, GraphQLBoolean } = require('graphql');
+const getSlug = require('speakingurl')
+const { GraphQLNonNull, GraphQLString, GraphQLList, GraphQLBoolean } = require('graphql')
 
-const Post = require('../../models/post');
-const PostType = require('../types/post');
+const Post = require('../../models/post')
+const PostType = require('../types/post')
 
 module.exports = {
   postCreate: {
@@ -18,8 +18,8 @@ module.exports = {
       description: { type: GraphQLString }
     },
 
-    async resolve(root, data) {
-      return await new Post({
+    resolve (root, data) {
+      return new Post({
         slug: getSlug(data.title),
         tags: data.tags,
         title: data.title,
@@ -28,7 +28,7 @@ module.exports = {
         content: data.content,
         scratch: data.scratch,
         description: data.description
-      }).save();
+      }).save()
     }
   },
 
@@ -38,22 +38,22 @@ module.exports = {
     args: {
       id: { type: GraphQLNonNull(GraphQLString) }
     },
-    async resolve(root, { id }) {
-      const postForDelete = await Post.findById(id).exec();
-      let query;
+    async resolve (root, { id }) {
+      const postForDelete = await Post.findById(id).exec()
+      let query
 
       if (postForDelete.scratch) {
         query = Post.deleteOne(
           { _id: postForDelete._id }
-        );
+        )
       } else {
         query = Post.updateOne(
           { _id: postForDelete._id },
           { scratch: true }
-        );
+        )
       }
 
-      return await query.exec();
+      return query.exec()
     }
   },
 
@@ -71,8 +71,8 @@ module.exports = {
       description: { type: GraphQLString }
     },
 
-    async resolve(root, data) {
-      const original = await Post.findById(data.id).exec();
+    async resolve (root, data) {
+      const original = await Post.findById(data.id).exec()
       const newSlug = getSlug(data.title)
       let slug = original.slug
 
@@ -80,8 +80,8 @@ module.exports = {
         slug = newSlug
       }
 
-      return await Post.findOneAndUpdate(
-        { _id: post.parent },
+      return Post.findOneAndUpdate(
+        { _id: original._id },
         {
           $set: {
             slug,
@@ -95,7 +95,7 @@ module.exports = {
           }
         },
         { new: true }
-      ).save().exec();
+      ).save().exec()
     }
   }
-};
+}

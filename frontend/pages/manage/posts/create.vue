@@ -60,6 +60,7 @@
         </div>
         <div class="form__row">
           <multiselect
+            id="tags"
             v-model="post.tags"
             :close-on-select="false"
             :clear-on-select="false"
@@ -159,130 +160,132 @@
 </template>
 
 <script>
-  import graphql from '~/graphql'
+import graphql from '~/graphql'
 
-  import BlogPost from '~/components/BlogPost'
-  import FileUpload from 'vue-upload-component/dist/vue-upload-component.part.js'
-  import Multiselect from 'vue-multiselect'
+import BlogPost from '~/components/BlogPost'
+import FileUpload from 'vue-upload-component/dist/vue-upload-component.part.js'
+import Multiselect from 'vue-multiselect'
 
-  export default {
-    components: {
-      BlogPost,
-      FileUpload,
-      Multiselect
-    },
+export default {
+  middleware: ['auth'],
 
-    data: () => ({
-      files: [],
-      tags: ['suka'],
-      preview: false,
-      post: {
-        title: '',
-        description: '',
-        short: '',
-        content: '',
-        tags: [],
-        image: '',
-        date: new Date().toLocaleDateString()
-      }
-    }),
+  components: {
+    BlogPost,
+    FileUpload,
+    Multiselect
+  },
 
-    computed: {
-      data() {
-        const parts = this.post.content.split(/\r?\n?\<\!\-\-\sbreak\s\-\-\>/)
-        const short = parts.length > 1 ? parts[0] + '...' : this.post.content.replace('<!-- break -->', '')
-        const content = this.post.content.replace('<!-- break -->', '')
+  data: () => ({
+    files: [],
+    tags: ['suka'],
+    preview: false,
+    post: {
+      title: '',
+      description: '',
+      short: '',
+      content: '',
+      tags: [],
+      image: '',
+      date: new Date().toLocaleDateString()
+    }
+  }),
 
-        return {
-          ...this.post,
-          short,
-          content
-        }
-      }
-    },
+  computed: {
+    data () {
+      const parts = this.post.content.split(/\r?\n?<!--\sbreak\s-->/)
+      const short = parts.length > 1 ? parts[0] + '...' : this.post.content.replace('<!-- break -->', '')
+      const content = this.post.content.replace('<!-- break -->', '')
 
-    methods: {
-      togglePreview() {
-        this.preview = !this.preview;
-      },
-
-      inputFilter(newFile, oldFile, prevent) {
-        if (newFile && !oldFile) {
-          if (/(\/|^)(Thumbs\.db|desktop\.ini|\..+)$/.test(newFile.name)) {
-            return prevent()
-          }
-          if (/\.(php?|html?|jsx?).*$/i.test(newFile.name)) {
-            return prevent()
-          }
-        }
-      },
-
-      async publish() {
-        return await this.$apollo.mutate({
-          mutation: graphql.post.create,
-          variables: {
-            tags: this.post.tags,
-            title: this.post.title,
-            image: this.post.image,
-            short: this.data.short,
-            content: this.data.content,
-            scratch: this.post.scratch,
-            description: this.post.description
-          }
-        })
-      },
-
-      async uploadFiles(data, component) {
-        data.headers['Content-type'] = 'multipart/form-data'
-
-        const formData = new FormData()
-        formData.append('file', data.file)
-
-        return await this.$apollo.mutate({
-          mutation: graphql.file.create,
-          variables: {
-            file: data.file
-          },
-          update(store, result) {
-            data.name = result.data.fileCreate.filename
-            data.graphql = result.data.fileCreate
-          }
-        })
-      },
-
-      async removeFile(file) {
-        const vm = this
-        const filename = file.name
-
-        file.name = 'removing...'
-
-        return await this.$apollo.mutate({
-          mutation: graphql.file.remove,
-          variables: {id: file.graphql.id},
-          update(store, result) {
-            file.name = filename
-            vm.$set(file, 'removed', true)
-          }
-        })
-      },
-
-      addTag(newTag) {
-        this.tags.push(newTag)
-        this.post.tags.push(newTag)
-      },
-
-      copyUri(file) {
-        const el = document.createElement('textarea');
-        el.value = `![IMAGE_ALT](${file.name} "IMAGE_TITLE")`
-        el.setAttribute('readonly', '');
-        el.style = {position: 'absolute', left: '-9999px'};
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
+      return {
+        ...this.post,
+        short,
+        content
       }
     }
+  },
+
+  methods: {
+    togglePreview () {
+      this.preview = !this.preview
+    },
+
+    inputFilter (newFile, oldFile, prevent) {
+      if (newFile && !oldFile) {
+        if (/(\/|^)(Thumbs\.db|desktop\.ini|\..+)$/.test(newFile.name)) {
+          return prevent()
+        }
+        if (/\.(php?|html?|jsx?).*$/i.test(newFile.name)) {
+          return prevent()
+        }
+      }
+    },
+
+    async publish () {
+      await this.$apollo.mutate({
+        mutation: graphql.post.create,
+        variables: {
+          tags: this.post.tags,
+          title: this.post.title,
+          image: this.post.image,
+          short: this.data.short,
+          content: this.data.content,
+          scratch: this.post.scratch,
+          description: this.post.description
+        }
+      })
+    },
+
+    async uploadFiles (data) {
+      data.headers['Content-type'] = 'multipart/form-data'
+
+      const formData = new FormData()
+      formData.append('file', data.file)
+
+      await this.$apollo.mutate({
+        mutation: graphql.file.create,
+        variables: {
+          file: data.file
+        },
+        update (store, result) {
+          data.name = result.data.fileCreate.filename
+          data.graphql = result.data.fileCreate
+        }
+      })
+    },
+
+    async removeFile (file) {
+      const vm = this
+      const filename = file.name
+
+      file.name = 'removing...'
+
+      await this.$apollo.mutate({
+        mutation: graphql.file.remove,
+        variables: { id: file.graphql.id },
+        update (store, result) {
+          file.name = filename
+          vm.$set(file, 'removed', true)
+        }
+      })
+    },
+
+    addTag (newTag) {
+      this.tags.push(newTag)
+      this.post.tags.push(newTag)
+    },
+
+    copyUri (file) {
+      const el = document.createElement('textarea')
+      el.value = `![IMAGE_ALT](${file.name} "IMAGE_TITLE")`
+      el.setAttribute('readonly', '')
+      el.style = { position: 'absolute', left: '-9999px' }
+      document.body.appendChild(el)
+      el.select()
+      document.execCommand('copy')
+      document.body.removeChild(el)
+    }
   }
+}
 </script>
 
 <style lang="scss">
@@ -306,4 +309,3 @@
     }
   }
 </style>
-

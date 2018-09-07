@@ -36,14 +36,14 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      data: {
-        type: Object,
-        default: null
-      }
+export default {
+  props: {
+    data: {
+      type: Object,
+      default: null
     }
   }
+}
 </script>
 
 <style lang="scss">

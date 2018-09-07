@@ -1,16 +1,16 @@
-const { GraphQLList } = require('graphql');
+const { GraphQLList } = require('graphql')
 
-const File = require('../../models/file');
-const FileType = require('../types/file');
+const File = require('../../models/file')
+const FileType = require('../types/file')
 
 const queries = {
   files: {
     type: GraphQLList(FileType),
     description: 'Get all files',
-    async resolve() {
+    resolve () {
       return File.find().exec()
     }
   }
-};
+}
 
-module.exports = queries;
+module.exports = queries

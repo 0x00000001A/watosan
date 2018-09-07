@@ -19,5 +19,6 @@ jspm_packages/
 # DotEnv environment variables file
 .env
 
-# nuxt.js build output
+# Project
 .nuxt
+.backend

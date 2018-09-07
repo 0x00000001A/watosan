@@ -5,71 +5,71 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      loading: {
-        type: Boolean,
-        default: false
-      }
-    },
+export default {
+  props: {
+    loading: {
+      type: Boolean,
+      default: false
+    }
+  },
 
-    data: () => ({
-      i: 0,
-      timer: null,
-      message: '— rainbows',
-      spinner: '\\',
-      spinners: [
-        '/',
-        '—',
-        '\\',
-        '|',
-        '/',
-        '—',
-        '\\',
-      ],
-      messages: [
-        'the grue',
-        'zelda',
-        'coffee',
-        'namaste',
-        'unicorns',
-        'rainbows',
-        'yavp',
-      ]
-    }),
+  data: () => ({
+    i: 0,
+    timer: null,
+    message: '— rainbows',
+    spinner: '\\',
+    spinners: [
+      '/',
+      '—',
+      '\\',
+      '|',
+      '/',
+      '—',
+      '\\'
+    ],
+    messages: [
+      'the grue',
+      'zelda',
+      'coffee',
+      'namaste',
+      'unicorns',
+      'rainbows',
+      'yavp'
+    ]
+  }),
 
-    watch: {
-      loading(o, n) {
-        console.log('fired')
-        if (o) {
-          this.start()
-        } else {
-          this.stop()
-        }
-      }
-    },
-
-    mounted() {
-      if (this.loading) {
+  watch: {
+    loading (o, n) {
+      console.log('fired')
+      if (o) {
         this.start()
+      } else {
+        this.stop()
       }
+    }
+  },
+
+  mounted () {
+    if (this.loading) {
+      this.start()
+    }
+  },
+
+  methods: {
+    start () {
+      console.log('visible')
+      this.timer = setInterval(() => {
+        this.i = this.i + 1 >= this.messages.length ? 0 : this.i + 1
+        this.message = this.messages[this.i]
+        this.spinner = this.spinners[this.i]
+      }, 500)
     },
 
-    methods: {
-      start() {
-        console.log('visible')
-        this.timer = setInterval(() => {
-          this.i = this.i + 1 >= this.messages.length ? 0 : this.i + 1
-          this.message = this.messages[this.i]
-          this.spinner = this.spinners[this.i]
-        }, 500);
-      },
-
-      stop() {
-        clearInterval(this.timer)
-      }
-    },
+    stop () {
+      clearInterval(this.timer)
+    }
   }
+}
 </script>
 
 <style>

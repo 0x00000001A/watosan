@@ -1,9 +1,11 @@
-const post = require('./post');
-const file = require('./file');
+const post = require('./post')
+const file = require('./file')
+const auth = require('./auth')
 
 const mutations = {
   ...post,
-  ...file
-};
+  ...file,
+  ...auth
+}
 
-module.exports = mutations;
+module.exports = mutations

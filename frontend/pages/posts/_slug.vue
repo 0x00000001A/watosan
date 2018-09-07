@@ -1,21 +1,21 @@
 <template>
   <div>
     <blog-loading :loading="$apollo.loading"/>
-    <blog-post 
-      v-if="post" 
+    <blog-post
+      v-if="post"
       :data="post"/>
   </div>
 </template>
 
 <script>
-import graphql from "~/graphql";
-import BlogPost from "~/components/BlogPost";
-import BlogLoading from "~/components/BlogLoading";
+import graphql from '~/graphql'
+import BlogPost from '~/components/BlogPost'
+import BlogLoading from '~/components/BlogLoading'
 
 export default {
-  head() {
-    const post = this.post && this.post.title ? this.post : {};
-    
+  head () {
+    const post = this.post && this.post.title ? this.post : {}
+
     return {
       title: post.title,
       meta: [
@@ -28,7 +28,7 @@ export default {
         { hid: 'twitter:card', content: 'summary_large_image' },
         { hid: 'twitter:title', content: post.title },
         { hid: 'twitter:image', content: post.image },
-        { hid: 'twitter:description', content: post.short ? post.short.substring(0, 200) : '' },
+        { hid: 'twitter:description', content: post.short ? post.short.substring(0, 200) : '' }
       ]
     }
   },
@@ -36,28 +36,28 @@ export default {
     BlogPost,
     BlogLoading
   },
-  validate({ params }) {
-    return /^[a-z0-9\-]+$/i.test(params.slug);
+  validate ({ params }) {
+    return /^[a-z0-9-]+$/i.test(params.slug)
   },
   props: {
     slug: {
       type: String,
       default: null
-    },
+    }
   },
   apollo: {
     post: {
       query: graphql.post.get,
       prefetch: ({ route }) => {
-        return { slug: route.params.slug };
+        return { slug: route.params.slug }
       },
-      variables() {
-        return { slug: this.$route.params.slug };
+      variables () {
+        return { slug: this.$route.params.slug }
       },
-      update(data) {
+      update (data) {
         return data.post
       }
     }
   }
-};
+}
 </script>

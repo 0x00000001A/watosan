@@ -1,10 +1,9 @@
 const {
-  GraphqlID,
   GraphQLList,
   GraphQLString,
   GraphQLBoolean,
   GraphQLObjectType
-} = require('graphql');
+} = require('graphql')
 
 const PostType = new GraphQLObjectType({
   name: 'Post',
@@ -49,6 +48,6 @@ const PostType = new GraphQLObjectType({
       description: 'Post visiblity'
     }
   }
-});
+})
 
-module.exports = PostType;
+module.exports = PostType

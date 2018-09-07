@@ -17,22 +17,21 @@
 </template>
 
 <script>
-  import graphql from "~/graphql";
-  import BlogPost from "~/components/BlogPost";
-  import BlogLoading from "~/components/BlogLoading";
+import graphql from '~/graphql'
+import BlogPost from '~/components/BlogPost'
+import BlogLoading from '~/components/BlogLoading'
 
-  export default {
-    components: {
-      BlogPost,
-      BlogLoading
-    },
+export default {
+  components: {
+    BlogPost,
+    BlogLoading
+  },
 
-    apollo: {
-      posts: {
-        prefetch: true,
-        query: graphql.post.getAll
-      }
+  apollo: {
+    posts: {
+      prefetch: true,
+      query: graphql.post.getAll
     }
-  };
+  }
+}
 </script>
-

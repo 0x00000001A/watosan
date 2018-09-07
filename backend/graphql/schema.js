@@ -1,8 +1,8 @@
-const { GraphQLSchema } = require('graphql');
-const { GraphQLUpload } = require('apollo-upload-server');
+const { GraphQLSchema } = require('graphql')
+const { GraphQLUpload } = require('apollo-upload-server')
 
-const query = require('./query');
-const mutation = require('./mutation');
+const query = require('./query')
+const mutation = require('./mutation')
 
 module.exports = new GraphQLSchema({
   types: [
@@ -10,4 +10,4 @@ module.exports = new GraphQLSchema({
   ],
   query,
   mutation
-});
+})

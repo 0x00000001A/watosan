@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const types = mongoose.SchemaTypes
 
@@ -14,10 +14,10 @@ const PostSchema = new mongoose.Schema({
 
   date: types.Date,
   scratch: types.Boolean
-});
+})
 
-PostSchema.virtual('id').get(function() {
-  return this._id.toString();
-});
+PostSchema.virtual('id').get(function () {
+  return this._id.toString()
+})
 
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('Post', PostSchema)

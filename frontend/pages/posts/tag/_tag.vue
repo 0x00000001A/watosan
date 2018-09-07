@@ -9,35 +9,34 @@
 </template>
 
 <script>
-  import graphql from "~/graphql";
-  import BlogPost from "~/components/BlogPost";
-  import BlogLoading from "~/components/BlogLoading";
+import graphql from '~/graphql'
+import BlogPost from '~/components/BlogPost'
+import BlogLoading from '~/components/BlogLoading'
 
-  export default {
-    components: {
-      BlogPost,
-      BlogLoading
-    },
-    props: {
-      slug: {
-        type: String,
-        default: null
+export default {
+  components: {
+    BlogPost,
+    BlogLoading
+  },
+  props: {
+    slug: {
+      type: String,
+      default: null
+    }
+  },
+  apollo: {
+    postsByTag: {
+      query: graphql.post.getByTag,
+      prefetch: ({ route }) => {
+        return { tag: route.params.tag }
       },
-    },
-    apollo: {
-      postsByTag: {
-        query: graphql.post.getByTag,
-        prefetch: ({ route }) => {
-          return { tag: route.params.tag };
-        },
-        variables() {
-          return { tag: this.$route.params.tag };
-        },
-        update(data) {
-          return data.postsByTag
-        }
+      variables () {
+        return { tag: this.$route.params.tag }
+      },
+      update (data) {
+        return data.postsByTag
       }
     }
-  };
+  }
+}
 </script>
-
