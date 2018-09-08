@@ -1,5 +1,11 @@
 const getSlug = require('speakingurl')
-const { GraphQLNonNull, GraphQLString, GraphQLList, GraphQLBoolean } = require('graphql')
+const { ForbiddenError } = require('apollo-server-express')
+const {
+  GraphQLNonNull,
+  GraphQLString,
+  GraphQLList,
+  GraphQLBoolean
+} = require('graphql')
 
 const Post = require('../../models/post')
 const PostType = require('../types/post')
@@ -18,7 +24,11 @@ module.exports = {
       description: { type: GraphQLString }
     },
 
-    resolve (root, data) {
+    resolve (root, data, { user }) {
+      if (!user) {
+        throw new ForbiddenError('Unauthorized')
+      }
+
       return new Post({
         slug: getSlug(data.title),
         tags: data.tags,
@@ -26,7 +36,7 @@ module.exports = {
         image: data.image,
         short: data.short,
         content: data.content,
-        scratch: data.scratch,
+        scratch: !!data.scratch,
         description: data.description
       }).save()
     }
@@ -38,7 +48,11 @@ module.exports = {
     args: {
       id: { type: GraphQLNonNull(GraphQLString) }
     },
-    async resolve (root, { id }) {
+    async resolve (root, { id }, { user }) {
+      if (!user) {
+        throw new ForbiddenError('Unauthorized')
+      }
+
       const postForDelete = await Post.findById(id).exec()
       let query
 
@@ -71,7 +85,11 @@ module.exports = {
       description: { type: GraphQLString }
     },
 
-    async resolve (root, data) {
+    async resolve (root, data, { user }) {
+      if (!user) {
+        throw new ForbiddenError('Unauthorized')
+      }
+
       const original = await Post.findById(data.id).exec()
       const newSlug = getSlug(data.title)
       let slug = original.slug
@@ -95,7 +113,7 @@ module.exports = {
           }
         },
         { new: true }
-      ).save().exec()
+      ).exec()
     }
   }
 }

@@ -10,7 +10,7 @@
     <div class="article__form">
       <form
         class="form"
-        @submit.prevent="publish">
+        @submit.prevent="update">
         <div class="form__row">
           <label
             class="form__label"
@@ -168,13 +168,17 @@ import Multiselect from 'vue-multiselect'
 
 export default {
   middleware: ['auth'],
-
   components: {
     BlogPost,
     FileUpload,
     Multiselect
   },
-
+  props: {
+    id: {
+      type: String,
+      default: null
+    }
+  },
   data: () => ({
     files: [],
     tags: ['suka'],
@@ -189,7 +193,20 @@ export default {
       date: new Date().toLocaleDateString()
     }
   }),
-
+  apollo: {
+    postById: {
+      query: graphql.post.getById,
+      prefetch: ({ route }) => {
+        return { id: route.params.id }
+      },
+      variables () {
+        return { id: this.$route.params.id }
+      },
+      update (data) {
+        this.$set(this, 'post', JSON.parse(JSON.stringify(data.postById)))
+      }
+    }
+  },
   computed: {
     data () {
       const parts = this.post.content.split(/\r?\n?<!--\sbreak\s-->/)
@@ -203,12 +220,10 @@ export default {
       }
     }
   },
-
   methods: {
     togglePreview () {
       this.preview = !this.preview
     },
-
     inputFilter (newFile, oldFile, prevent) {
       if (newFile && !oldFile) {
         if (/(\/|^)(Thumbs\.db|desktop\.ini|\..+)$/.test(newFile.name)) {
@@ -219,11 +234,11 @@ export default {
         }
       }
     },
-
-    async publish () {
+    async update () {
       await this.$apollo.mutate({
-        mutation: graphql.post.create,
+        mutation: graphql.post.update,
         variables: {
+          id: this.post.id,
           tags: this.post.tags,
           title: this.post.title,
           image: this.post.image,
@@ -231,16 +246,10 @@ export default {
           content: this.data.content,
           scratch: this.post.scratch,
           description: this.post.description
-        },
-        update (store, result) {
-          const data = store.readQuery({ query: graphql.post.getAll })
-          data.posts.unshift(result.data.postCreate)
-          store.writeQuery({ query: graphql.post.getAll, data })
         }
       })
       this.$router.replace({ path: '/manage/posts' })
     },
-
     async uploadFiles (data) {
       data.headers['Content-type'] = 'multipart/form-data'
 
@@ -258,7 +267,6 @@ export default {
         }
       })
     },
-
     async removeFile (file) {
       const vm = this
       const filename = file.name
@@ -274,12 +282,10 @@ export default {
         }
       })
     },
-
     addTag (newTag) {
       this.tags.push(newTag)
       this.post.tags.push(newTag)
     },
-
     copyUri (file) {
       const el = document.createElement('textarea')
       el.value = `![IMAGE_ALT](${file.name} "IMAGE_TITLE")`

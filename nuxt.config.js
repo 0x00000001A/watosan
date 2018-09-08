@@ -16,19 +16,19 @@ module.exports = {
   },
 
   head: {
-    title: 'Watosan',
-    titleTemplate: '%s - Watosan',
+    title: process.env.NAME,
+    titleTemplate: '%s - ' + process.env.NAME,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'og:type', property: 'og:type', content: 'article' },
-      { hid: 'og:title', property: 'og:title', content: '' },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Watosan' },
-      { hid: 'og:url', property: 'og:url', content: 'http://watosan.org' },
+      { hid: 'og:title', property: 'og:title', content: process.env.NAME },
+      { hid: 'og:site_name', property: 'og:site_name', content: process.env.NAME },
+      { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL },
       { hid: 'twitter:card', property: 'twitter:card', content: 'article' },
       { hid: 'twitter:site', property: 'twitter:site', content: '@watosanorg' },
-      { hid: 'twitter:title', property: 'twitter:title', content: 'Watosan' },
-      { hid: 'twitter:description', property: 'twitter:description', content: 'Another one developer\'s blog' }
+      { hid: 'twitter:title', property: 'twitter:title', content: process.env.NAME },
+      { hid: 'twitter:description', property: 'twitter:description', content: process.env.DESC }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inconsolata|Merriweather' }
@@ -77,7 +77,7 @@ module.exports = {
     includeNodeModules: true,
     clientConfigs: {
       default: {
-        httpEndpoint: `http://${process.env.HOST}:${process.env.PORT}/graphql`
+        httpEndpoint: process.env.GRAPHQL_URL
       }
     }
   },

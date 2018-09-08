@@ -1,5 +1,22 @@
 import gql from 'graphql-tag'
 
+const getById = gql`
+  query postById($id: String!){
+    postById(id: $id) {
+      id
+      slug
+      tags
+      date
+      title
+      image
+      short
+      content
+      scratch
+      description
+    }
+  }
+`
+
 const getByTag = gql`
   query postsByTag($tag: String!){
     postsByTag(tag: $tag) {
@@ -43,8 +60,9 @@ const getAll = gql`
   }
 `
 const create = gql`
-  mutation postCreate($tags: [String], $title: String!, $image: String, $short: String!, $content: String!, $scratch: Boolean!, $description: String!) {
+  mutation postCreate($tags: [String], $title: String!, $image: String, $short: String!, $content: String!, $scratch: Boolean, $description: String!) {
     postCreate(tags: $tags, title: $title, image: $image, short: $short, content: $content, scratch: $scratch, description: $description) {
+      id
       slug
       tags
       date
@@ -61,6 +79,7 @@ const create = gql`
 const update = gql`
   mutation postUpdate($id: String!, $tags: [String], $title: String!, $image: String, $short: String!, $content: String!, $scratch: Boolean!, $description: String!) {
     postUpdate(id: $id, tags: $tags, title: $title, image: $image, short: $short, content: $content, scratch: $scratch, description: $description) {
+      id
       slug
       tags
       date
@@ -85,6 +104,7 @@ const remove = gql`
 export default {
   get,
   getAll,
+  getById,
   getByTag,
   create,
   update,

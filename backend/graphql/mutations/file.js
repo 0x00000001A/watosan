@@ -6,6 +6,7 @@ const intformat = require('biguint-format')
 
 const { GraphQLString } = require('graphql')
 const { GraphQLUpload } = require('apollo-upload-server')
+const { ForbiddenError } = require('apollo-server-express')
 
 const File = require('../../models/file')
 const FileType = require('../types/file')
@@ -21,7 +22,11 @@ module.exports = {
         type: GraphQLUpload
       }
     },
-    async resolve (root, data) {
+    async resolve (root, data, { user }) {
+      if (!user) {
+        throw new ForbiddenError('Unauthorized')
+      }
+
       const { stream, mimetype, encoding } = await data.file
 
       const uploadsDir = path.join(__dirname, '../..', 'uploads')

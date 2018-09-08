@@ -1,7 +1,7 @@
 import jwt from 'express-jwt'
-import { ApolloServer } from 'apollo-server-express'
 import express from 'express'
 import mongoose from 'mongoose'
+import { ApolloServer } from 'apollo-server-express'
 import { Nuxt, Builder } from 'nuxt'
 
 import schema from './graphql/schema'

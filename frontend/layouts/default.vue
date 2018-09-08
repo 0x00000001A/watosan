@@ -25,6 +25,15 @@
         </div>
         <div class="aside-block">
           <ul class="app-menu">
+            <li
+              v-if="authorized"
+              class="app-menu__item">
+              <nuxt-link
+                class="app-menu__link"
+                to="/manage">
+                Manage
+              </nuxt-link>
+            </li>
             <li class="app-menu__item">
               <nuxt-link
                 class="app-menu__link"
@@ -60,7 +69,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    authorized () {
+      return this.$store.state.authorized || this.$apolloHelpers.getToken()
+    }
+  }
+}
 </script>
 
 <style lang="scss">

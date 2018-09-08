@@ -40,7 +40,6 @@ export default {
 
   watch: {
     loading (o, n) {
-      console.log('fired')
       if (o) {
         this.start()
       } else {
@@ -57,7 +56,6 @@ export default {
 
   methods: {
     start () {
-      console.log('visible')
       this.timer = setInterval(() => {
         this.i = this.i + 1 >= this.messages.length ? 0 : this.i + 1
         this.message = this.messages[this.i]
