@@ -29,6 +29,18 @@ const questions = {
         message: 'Blog description'
       },
       {
+        name: 'AUTHOR_NAME',
+        type: 'input',
+        default: 'Watosan',
+        message: 'Author full name'
+      },
+      {
+        name: 'AUTHOR_EMAIL',
+        type: 'input',
+        default: 'mail@example.com',
+        message: 'Author email'
+      },
+      {
         name: 'HOST',
         type: 'input',
         default: '127.0.0.1',
@@ -67,6 +79,56 @@ const questions = {
         type: 'input',
         default: 'watosan',
         message: 'MongoDB database name'
+      },
+      {
+        name: 'RECAPTCHA_KEY',
+        type: 'input',
+        message: 'Recaptcha key',
+        validate: (input) => {
+          return !!input.length
+        }
+      },
+      {
+        name: 'RECAPTCHA_SECRET',
+        type: 'input',
+        message: 'Recaptcha secret',
+        validate: (input) => {
+          return !!input.length
+        }
+      },
+      {
+        name: 'SMTP_HOST',
+        type: 'input',
+        message: 'SMTP Host (mail.mydomain.com)',
+        default: 'mail.mydomain.com'
+      },
+      {
+        name: 'SMTP_PORT',
+        type: 'input',
+        message: 'SMTP Port',
+        default: '465'
+      },
+      {
+        name: 'SMTP_SECURE',
+        type: 'list',
+        choices: [
+          'true',
+          'false'
+        ],
+        message: 'SMTP Use secure connection',
+        default: 'true'
+      },
+      {
+        name: 'SMTP_USER',
+        type: 'input',
+        message: 'SMTP username',
+        default: 'username'
+      },
+      {
+        name: 'SMTP_PASS',
+        type: 'input',
+        message: 'SMTP password',
+        default: 'password'
       }
     ]
     return inquirer.prompt(questions)

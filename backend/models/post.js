@@ -13,6 +13,7 @@ const PostSchema = new mongoose.Schema({
   content: types.String,
 
   date: types.Date,
+  mailed: types.Boolean,
   scratch: types.Boolean
 })
 

@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import { ApolloServer } from 'apollo-server-express'
 import { Nuxt, Builder } from 'nuxt'
 
+import feed from './feed'
 import schema from './graphql/schema'
 import nuxtConfig from '../nuxt.config'
 
@@ -38,6 +39,7 @@ function initExpress () {
     }
   })
 
+  app.use('/feed', feed)
   app.use('/photos', express.static('photos'))
 
   app.use((request, response, next) => {
@@ -53,7 +55,8 @@ function initApollo (app) {
   return new ApolloServer({
     schema,
     context: ({ req }) => ({
-      user: req.user
+      user: req.user,
+      remoteip: req.headers['x-forwarded-for'] || req.connection.remoteAddress
     }),
     debug: process.env.NODE_ENV === 'development',
     playground: {
@@ -73,6 +76,7 @@ async function connectDatabase () {
     `mongodb://${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_NAME}`,
     { useNewUrlParser: true }
   )
+  mongoose.set('useCreateIndex', true)
 }
 
 async function runServer () {

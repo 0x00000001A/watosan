@@ -37,25 +37,19 @@
             <li class="app-menu__item">
               <nuxt-link
                 class="app-menu__link"
-                to="/">RSS
+                to="/feed">Feed
               </nuxt-link>
             </li>
             <li class="app-menu__item">
               <nuxt-link
                 class="app-menu__link"
-                to="/">About
+                to="/about">About
               </nuxt-link>
             </li>
             <li class="app-menu__item">
               <nuxt-link
                 class="app-menu__link"
-                to="/">Contact
-              </nuxt-link>
-            </li>
-            <li class="app-menu__item">
-              <nuxt-link
-                class="app-menu__link"
-                to="/">Subscribe
+                to="/subscribe">Subscribe
               </nuxt-link>
             </li>
           </ul>
@@ -222,7 +216,7 @@ export default {
   }
 
   .footer {
-    margin: 10px;
+    margin: 50px 10px 10px;
   }
 
   .menu,

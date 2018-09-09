@@ -1,9 +1,11 @@
 # Watosan
-Fullstack blog VueJS + NuxtJS + MongoDB + Apollo + GraphQL + SSR + PWA + AMP
+:metal: Fullstack blog VueJS + NuxtJS + MongoDB + Apollo + GraphQL + SSR + PWA + AMP
+
+> :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 
-## Installation
+## :clipboard: Installation
 ```bash
 # Install dependencies
 npm i
@@ -12,7 +14,7 @@ npm i
 node install
 ```
 
-## Usage
+## :space_invader: Usage
 ```bash
 # Serve in development mode
 npm run dev
@@ -26,9 +28,9 @@ npm run lint
 npm run lint:fix
 ```
 
-## Features
-- Send email (todo!)
-- Pages (todo!)
+## :gem: Features
+- Send email (subscriptions)
+- reCaptcha
 - Posts
 - Tags
 - Backoffice
@@ -36,7 +38,7 @@ npm run lint:fix
 - - Open Graph (incomplete!)
 - - Twitter Card (incomplete!)
 
-## Tools, methodologies
+## :muscle: Tools, methodologies
 - SSR ([NuxtJS](https://nuxtjs.org/))
 - [VueJS](https://vuejs.org/)
 - JWT
@@ -55,6 +57,8 @@ npm run lint:fix
 - [PM2](http://pm2.keymetrics.io/)
 - [Sass](https://sass-lang.com/)
 - [Speakingurl (slug)](https://github.com/pid/speakingurl)
+- [Nodemailer](https://nodemailer.com/about/) for mailing
+- [reCaptcha](https://developers.google.com/recaptcha/)
 - [Vue-multiselect](https://vue-multiselect.js.org/)
 - [Backpack](https://github.com/jaredpalmer/backpack)
 - Markdown

@@ -20,5 +20,5 @@ jspm_packages/
 .env
 
 # Project
-.nuxt
-.backend
+.nuxt/
+.backend/

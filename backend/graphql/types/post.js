@@ -43,6 +43,10 @@ const PostType = new GraphQLObjectType({
       type: GraphQLString,
       description: 'Publish date'
     },
+    mailed: {
+      type: GraphQLBoolean,
+      description: 'Indicates, if post has been sent to subscribers'
+    },
     scratch: {
       type: GraphQLBoolean,
       description: 'Post visiblity'

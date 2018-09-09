@@ -12,7 +12,8 @@ module.exports = {
   cache: true,
   env: {
     HOST: process.env.HOST,
-    PORT: process.env.PORT
+    PORT: process.env.PORT,
+    RECAPTCHA_KEY: process.env.RECAPTCHA_KEY
   },
 
   head: {
@@ -32,6 +33,9 @@ module.exports = {
     ],
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Inconsolata|Merriweather' }
+    ],
+    script: [
+      { src: 'https://www.google.com/recaptcha/api.js' }
     ]
   },
 

@@ -1,4 +1,7 @@
 const getSlug = require('speakingurl')
+const nodemailer = require('nodemailer')
+const textversion = require('textversionjs')
+
 const { ForbiddenError } = require('apollo-server-express')
 const {
   GraphQLNonNull,
@@ -8,6 +11,8 @@ const {
 } = require('graphql')
 
 const Post = require('../../models/post')
+const Subscriber = require('../../models/subscriber')
+
 const PostType = require('../types/post')
 
 module.exports = {
@@ -24,9 +29,47 @@ module.exports = {
       description: { type: GraphQLString }
     },
 
-    resolve (root, data, { user }) {
+    async resolve (root, data, { user }) {
       if (!user) {
         throw new ForbiddenError('Unauthorized')
+      }
+
+      if (!data.scratch) {
+        const subscribers = await Subscriber.find().exec()
+        const transporter = nodemailer.createTransport({
+          host: process.env.SMTP_HOST,
+          port: process.env.SMTP_PORT,
+          secure: process.env.SMTP_SECURE,
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+          },
+          tls: {
+            rejectUnauthorized: false
+          }
+        })
+
+        subscribers.forEach((recepient) => {
+          const additional = `
+            <p>
+              Read more:
+              ${process.env.BASE_URL}/posts/${getSlug(data.title)}
+            </p>
+            <hr/>
+            <p style="background-color: #eee; padding: 15px;">
+              Unsubscribe link:
+              ${process.env.BASE_URL}/unsubscribe?id=${recepient.id}&token=${recepient.token}
+            </p>
+          `
+
+          transporter.sendMail({
+            from: 'noreply@mail.watosan.org',
+            to: recepient.email,
+            subject: data.title,
+            text: textversion(data.short) + additional,
+            html: data.short + additional
+          })
+        })
       }
 
       return new Post({
@@ -36,6 +79,7 @@ module.exports = {
         image: data.image,
         short: data.short,
         content: data.content,
+        mailed: !!data.scratch,
         scratch: !!data.scratch,
         description: data.description
       }).save()

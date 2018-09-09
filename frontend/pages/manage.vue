@@ -4,6 +4,7 @@
     <p v-if="authorized">
       <nuxt-link to="/manage/posts">Posts</nuxt-link> /
       <nuxt-link to="/manage/posts/create">New Post</nuxt-link> /
+      <nuxt-link to="/manage/subscribers">Subscribers</nuxt-link> /
       <a
         href
         @click.prevent="logout">Logout</a>
