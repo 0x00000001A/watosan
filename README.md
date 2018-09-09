@@ -3,7 +3,7 @@
 
 > :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
 
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mydesireiscoma/watosan.org.svg)](https://greenkeeper.io/)[![CodeFactor](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org/badge)](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mydesireiscoma/watosan.org.svg)](https://greenkeeper.io/) [![CodeFactor](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org/badge)](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org)
 
 ## :clipboard: Installation
 ```bash
