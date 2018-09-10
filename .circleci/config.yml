@@ -23,5 +23,8 @@ jobs:
           name: lint
           command: npm run lint
       - run:
+          name: configure
+          command: node install
+      - run:
           name: build
           command: npm run build
