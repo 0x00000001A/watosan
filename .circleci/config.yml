@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/watosanorg
+    docker:
+      - image: circleci/node:8.11.4
+      - image: mongo:4.0.1
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-npm-wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: configure
+          command: node install -y
+      - run:
+          name: build
+          command: npm run build

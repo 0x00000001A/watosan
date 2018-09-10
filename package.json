@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "backpack dev",
     "start": "cross-env NODE_ENV=production pm2 start ./.backend/main.js -i max",
-    "build": "cross-nev NODE_ENV=production run-p server:build client:build",
+    "build": "cross-env NODE_ENV=production run-p server:build client:build",
     "server:build": "backpack build",
     "client:build": "nuxt build",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
@@ -23,7 +23,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.7.1"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc1",
@@ -38,6 +38,7 @@
     "biguint-format": "^1.0.0",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
