@@ -7,14 +7,14 @@
 
 > :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
 
-> Todo list:
-> [-] Use better font
-> [-] Fix font rendering
-> [-] Fix bundle size
-> [-] Fix OG and TC definitions according to @nuxt/pwa documentation
-> [-] Try to get 100 lh score for all checks
-> [-] Make sure PWA works corretly with 100 lh score
-> [-] Make codestyle to be consistent. Rewrite es5 to es6 cuz of backpack usage
+### Todo list
+- [ ] Use better font
+- [ ] Fix font rendering
+- [ ] Fix bundle size (at least swtich off from highlightjs)
+- [ ] Fix OG and TC definitions according to @nuxt/pwa documentation
+- [ ] Try to get 100 lh score for all checks
+- [ ] Make sure PWA works corretly with 100 lh score
+- [ ] Make codestyle to be consistent. Rewrite es5 to es6 cuz of backpack usage
 
 ## :clipboard: Installation
 ```bash
