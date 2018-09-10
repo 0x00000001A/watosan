@@ -22,3 +22,4 @@ jspm_packages/
 # Project
 .nuxt/
 .backend/
+frontend/static/sw.js
