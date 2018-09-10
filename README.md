@@ -40,7 +40,12 @@ npm run lint:fix
 
 ## :muscle: Tools, methodologies
 - SSR ([NuxtJS](https://nuxtjs.org/))
+- [NuxtJS PWA](https://github.com/nuxt-community/pwa-module)
 - [VueJS](https://vuejs.org/)
+- [HighlightJS](https://highlightjs.org/)
+- [reCaptcha](https://developers.google.com/recaptcha/)
+- [Vue-multiselect](https://vue-multiselect.js.org/)
+- [Sass](https://sass-lang.com/)
 - JWT
 - - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
 - - [express-jwt](https://github.com/auth0/express-jwt)
@@ -50,16 +55,10 @@ npm run lint:fix
 - - [NuxtJS apollo module](https://github.com/nuxt-community/apollo-module)
 - - [Apollo server](https://www.apollographql.com/docs/apollo-server/)
 - - [Apollo upload](https://github.com/jaydenseric/apollo-upload-server)
-- [NuxtJS PWA](https://github.com/nuxt-community/pwa-module)
 - [ENV (dotenv)](https://github.com/motdotla/dotenv)
-- [AMP](https://www.ampproject.org/)
-- [HighlightJS](https://highlightjs.org/)
 - [PM2](http://pm2.keymetrics.io/)
-- [Sass](https://sass-lang.com/)
 - [Speakingurl (slug)](https://github.com/pid/speakingurl)
 - [Nodemailer](https://nodemailer.com/about/) for mailing
-- [reCaptcha](https://developers.google.com/recaptcha/)
-- [Vue-multiselect](https://vue-multiselect.js.org/)
 - [Backpack](https://github.com/jaredpalmer/backpack)
 - Markdown
 - - [NuxtJS Markdown-it module](https://www.npmjs.com/package/@nuxtjs/markdownit)
