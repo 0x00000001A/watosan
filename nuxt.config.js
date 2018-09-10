@@ -49,12 +49,21 @@ module.exports = {
 
   manifest: {
     name: process.env.NAME,
+    short_name: process.env.NAME,
     description: process.env.DESC,
-    theme_color: '#3B8070'
+    theme_color: '#1b1b1b',
+    background_color: '#e9e9e9',
+    display: 'browser',
+    scope: '/',
+    start_url: '/'
   },
 
   modules: [
-    '@nuxtjs/pwa',
+    ['@nuxtjs/pwa', {
+      icon: {
+        iconSrc: 'frontend/static/logo.png'
+      }
+    }],
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@nuxtjs/component-cache'
@@ -99,6 +108,7 @@ module.exports = {
 
   build: {
     extractCSS: true,
+    analyze: false,
     vendor: [],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

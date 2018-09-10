@@ -2,11 +2,19 @@
 
 :metal: Fullstack blog VueJS + NuxtJS + MongoDB + Apollo + GraphQL + SSR + PWA + AMP :metal:
 
-
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mydesireiscoma/watosan.org/blob/master/LICENSE) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mydesireiscoma/watosan.svg)](https://greenkeeper.io/) [![CodeFactor](https://www.codefactor.io/repository/github/mydesireiscoma/watosan/badge)](https://www.codefactor.io/repository/github/mydesireiscoma/watosan)
 ![CircleCI branch](https://img.shields.io/circleci/project/github/mydesireiscoma/watosan/master.svg)
 
 > :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
+
+> Todo list:
+> [-] Use better font
+> [-] Fix font rendering
+> [-] Fix bundle size
+> [-] Fix OG and TC definitions according to @nuxt/pwa documentation
+> [-] Try to get 100 lh score for all checks
+> [-] Make sure PWA works corretly with 100 lh score
+> [-] Make codestyle to be consistent. Rewrite es5 to es6 cuz of backpack usage
 
 ## :clipboard: Installation
 ```bash
