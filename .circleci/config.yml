@@ -21,7 +21,7 @@ jobs:
             - ./node_modules
       - run:
           name: lint
-          command: npm lint
+          command: npm run lint
       - run:
           name: build
-          command: npm build
+          command: npm run build
