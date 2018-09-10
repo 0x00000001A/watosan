@@ -38,6 +38,7 @@
     "biguint-format": "^1.0.0",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
