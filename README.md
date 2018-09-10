@@ -1,12 +1,8 @@
-<h1 align="center">Watosan</h1>
+# Watosan
 
-<p align="center">
 :metal: Fullstack blog VueJS + NuxtJS + MongoDB + Apollo + GraphQL + SSR + PWA + AMP :metal:
-</p>
 
-<p align="center">
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge](https://badges.greenkeeper.io/mydesireiscoma/watosan.org.svg)](https://greenkeeper.io/) [![CodeFactor](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org/badge)](https://www.codefactor.io/repository/github/mydesireiscoma/watosan.org) [![CircleCI](https://circleci.com/gh/mydesireiscoma/watosan.org/tree/master.svg?style=svg)](https://circleci.com/gh/mydesireiscoma/watosan.org/tree/master)
-</p>
 
 > :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
 
