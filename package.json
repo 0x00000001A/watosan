@@ -30,7 +30,7 @@
     "@nuxtjs/component-cache": "^1.1.2",
     "@nuxtjs/markdownit": "^1.2.1",
     "@nuxtjs/pwa": "^2.5.0",
-    "apollo-server-express": "^2.0.6",
+    "apollo-server-express": "^2.2.1",
     "apollo-upload-server": "^7.1.0",
     "axios": "^0.18.0",
     "backpack-core": "^0.8.1",
