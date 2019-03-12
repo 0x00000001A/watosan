@@ -1,16 +1,14 @@
-import Vuex from 'vuex'
+const state = () => ({
+  authorized: false
+})
 
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      authorized: false
-    },
-    mutations: {
-      setAuthorized (state, value) {
-        state.authorized = value
-      }
-    }
-  })
+const mutations = {
+  setAuthorized (state, value) {
+    state.authorized = value
+  }
 }
 
-export default createStore
+export default {
+  state,
+  mutations
+}

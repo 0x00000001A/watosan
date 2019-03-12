@@ -109,7 +109,6 @@ module.exports = {
   build: {
     extractCSS: true,
     analyze: false,
-    vendor: [],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({

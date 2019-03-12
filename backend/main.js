@@ -99,5 +99,5 @@ async function runServer () {
 }
 
 runServer().finally(() => {
-  console.log('🚀 Successfull')
+  console.log('🚀 Successful')
 })
