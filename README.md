@@ -2,7 +2,7 @@
 
 :metal: Fullstack blog VueJS + NuxtJS + MongoDB + Apollo + GraphQL + SSR + PWA + AMP :metal:
 
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mydesireiscoma/watosan.org/blob/master/LICENSE) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com) [![Greenkeeper badge]
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/mydesireiscoma/watosan.org/blob/master/LICENSE) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
 ![CircleCI branch](https://img.shields.io/circleci/project/github/mydesireiscoma/watosan/master.svg)
 
 > :exclamation: Warning! This project is currently under development. Project may contain errors, incomplete parts and everything what incomplete project may have.
