@@ -50,7 +50,6 @@ module.exports = {
         })
         .clone()
         .resize(1024, 1024, { fit: sharp.fit.inside })
-        .max()
         .pipe(writeStream)
 
       const stream = createReadStream()
