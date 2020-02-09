@@ -27,13 +27,15 @@ module.exports = {
         throw new ForbiddenError('Unauthorized')
       }
 
-      const { stream, mimetype, encoding } = await data.file
+      const { createReadStream, mimetype, encoding } = await data.file
 
       const uploadsDir = path.join(__dirname, '../..', 'uploads')
       let filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id
       let fullpath = path.join(uploadsDir, filename)
 
-      if (!fs.existsSync(uploadsDir)) fs.mkdir(uploadsDir)
+      if (!fs.existsSync(uploadsDir)){
+        fs.mkdir(uploadsDir, { recursive: true }, err => {})
+      }
       if (fs.existsSync(fullpath)) {
         filename = intformat(flakeIdGen.next(), 'dec') + '.' + sharp.format.jpeg.id
         fullpath = path.join(uploadsDir, filename)
@@ -47,10 +49,10 @@ module.exports = {
           chromaSubsampling: '4:4:4'
         })
         .clone()
-        .resize(1024, 1024)
-        .max()
+        .resize(1024, 1024, { fit: sharp.fit.inside })
         .pipe(writeStream)
 
+      const stream = createReadStream()
       stream.pipe(pipeline)
 
       return new File({
