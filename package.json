@@ -48,7 +48,7 @@
     "flake-idgen": "^1.1.2",
     "graphql": "^14.1.1",
     "graphql-tag": "^2.10.1",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^10.4.1",
     "inquirer": "^6.2.2",
     "jsonwebtoken": "^8.5.0",
     "markdown-it-emoji": "^1.4.0",
