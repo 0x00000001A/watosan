@@ -32,7 +32,7 @@
     "@nuxtjs/pwa": "^2.6.0",
     "apollo-server-express": "^2.4.8",
     "apollo-upload-server": "^7.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "backpack-core": "^0.8.3",
     "bcrypt": "^3.0.4",
     "biguint-format": "^1.0.1",
